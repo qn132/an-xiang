@@ -17,7 +17,12 @@ module.exports = {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: 'babel-loader'
-      }
+      },
+      // 新增 CSS 规则
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ]
   },
   plugins: [
