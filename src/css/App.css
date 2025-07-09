@@ -1,7 +1,13 @@
 /* App的全局样式 */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 .App {
   text-align: center;
   background-color: #7e9af5;
-  padding: 20px;
+  /* padding: 10px; */
+  border-radius: 3px;
 }
