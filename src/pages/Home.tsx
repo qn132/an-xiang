@@ -1,6 +1,8 @@
 import React from 'react';
 import '../css/Home.css'; // 样式需要单独提取到CSS文件中
 
+// 手绘风格网页布局组件
+
 const Home = () => {
     return (
         <div className="hand-drawn-layout">
