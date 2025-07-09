@@ -1,5 +1,6 @@
 import React from 'react';
-import '../css/Home.css'; // 样式需要单独提取到CSS文件中
+import './Home.css'; // 样式需要单独提取到CSS文件中
+import Music from '../../components/Music/Music'; // 假设有一个音乐组件用于播放背景音乐
 
 // 手绘风格网页布局组件
 
@@ -26,6 +27,7 @@ const Home = () => {
                     <p>这里是网页的主要内容区域，你可以放置文章、图片、视频等各种内容。</p>
                     <p>这个布局采用了三栏结构，左侧是导航菜单，中间是主要内容，右侧是附加信息。</p>
                     <p>为了增强手绘感，添加了一些装饰元素，如旋转的标题、虚线边框和涂鸦线条。</p>
+                    <Music/>
                 </div>
             </div>
             
