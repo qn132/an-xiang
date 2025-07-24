@@ -32,6 +32,7 @@ interface MusicPlayerProps {
 const MusicPlayer: React.FC<MusicPlayerProps> = ({ size, zidingyiys, songs, backgroundImg }) => {
 
   const [currentSongIndex, setCurrentSongIndex] = React.useState(0);
+  const [isUserPlayed, setIsUserPlayed] = React.useState(false);
 
   const currentSongTitle = songs?.[currentSongIndex]?.title || '';
 
@@ -39,6 +40,7 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ size, zidingyiys, songs, back
     const audio = document.getElementById("audio-player") as HTMLAudioElement;
     if (audio.paused) {
       audio.play();
+      setIsUserPlayed(true); // 用户主动播放
     } else {
       audio.pause();
     }
@@ -58,9 +60,12 @@ const MusicPlayer: React.FC<MusicPlayerProps> = ({ size, zidingyiys, songs, back
     const audio = document.getElementById("audio-player") as HTMLAudioElement;
     if (audio && songs && songs[currentSongIndex]) {
       audio.src = songs[currentSongIndex].url;
-      audio.play();
+      // 用户主动播放过后，切歌自动播放
+      if (isUserPlayed) {
+        audio.play();
+      }
     }
-  }, [currentSongIndex, songs]);
+  }, [currentSongIndex, songs, isUserPlayed]);
 
   // 自动切换到下一曲：当前歌曲播放结束时
   React.useEffect(() => {
