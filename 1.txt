@@ -1,0 +1,5 @@
+pages                   每个组件都是全屏
+components              每个组件嵌入pages里的组件
+每个组件 由 .tsx 和 .css 俩个文件组成
+public                  存放。。。
+src                     存放。。。      

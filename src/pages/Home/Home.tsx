@@ -1,10 +1,19 @@
 import React from 'react';
 import './Home.css'; // 样式需要单独提取到CSS文件中
-import Music from '../../components/Music/Music'; // 假设有一个音乐组件用于播放背景音乐
+import MusicPlayer from '../../components/MusicPlayer/MusicPlayer'; // 引入音乐播放器组件
 
 // 手绘风格网页布局组件
+// 这个组件模仿了手绘草图的设计风格，使用了CSS的一些创意效果
+// 包含左侧导航栏、中间内容区和右侧信息区   
 
 const Home = () => {
+    // 读取public目录下的musics文件夹中的音乐mp3文件,生成一个音乐列表的函数
+
+    const yinyueliebiao = [
+        { title: "Song 1", url: "/song.mp3" },
+        { title: "Song 2", url: "/song2.mp3" },
+    ];
+
     return (
         <div className="hand-drawn-layout">
             {/* 左侧导航栏 */}
@@ -27,7 +36,12 @@ const Home = () => {
                     <p>这里是网页的主要内容区域，你可以放置文章、图片、视频等各种内容。</p>
                     <p>这个布局采用了三栏结构，左侧是导航菜单，中间是主要内容，右侧是附加信息。</p>
                     <p>为了增强手绘感，添加了一些装饰元素，如旋转的标题、虚线边框和涂鸦线条。</p>
-                    <Music/>
+                    <MusicPlayer
+                     size='medium'
+                      songs={yinyueliebiao}
+                       backgroundImg='/background.jpg'
+                       zidingyiys={{ lyricsColor: 'green', lyricsfontSize: '16px', buttonColor: 'transparent' }}
+                    />
                 </div>
             </div>
             
